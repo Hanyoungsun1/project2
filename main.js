@@ -11,7 +11,7 @@ for (let i=0; i<contents.length; i++){
 
 
 // 스크롤 움직일 때
-let sections = document.querySelectorAll("#wrap>.footer>section");
+let sections = document.querySelectorAll("#container>div>.scroll");
 
 let activation= (index,list) => {
     for(let el of list){
@@ -28,4 +28,19 @@ window.addEventListener("scroll", e => {
             activation(i,sections);
         }
     }
+
+   for(let i=0;i<contents.length;i++){
+    contents[i].addEventListener('wheel', e => {
+        if (e.wheelDelta > 0) { //scroll up
+          let prev = e.currentTarget.previousElementSibling.offsetTop;
+          console.log(prev);
+          window.scroll({
+            top: prev,
+            left: 0,
+            behavior: "smooth"
+          });
+        }
+    })
+   } 
 })
+

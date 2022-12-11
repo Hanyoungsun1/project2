@@ -15,11 +15,12 @@ a{text-decoration: none;}
 #header>.top_center>ul>li a{color: #000; }    
 
 #header>.top_center>ul>li:hover >ul{}
-#header>.top_center>ul>li>ul{position: absolute;left: 0; width: 100%; padding: 30px; background: #F3f3f3;display: none;} 
-#header>.top_center>ul>li>ul>li{float: left; font-weight: bold; font-size: 15px; }
+#header>.top_center>ul>li>ul{z-index: 100; position: absolute;left: 0; width: 100%; padding: 30px;} 
+#header>.top_center>ul>li>ul>li{float: left; font-weight: bold; font-size: 15px;  display: none;}
+#header>.top_center>ul>li>ul{ display: none;}
 #header>.top_center>ul>li>ul>li a{color: #043285;}
-#header>.top_center>ul>li>ul>li>ul{float: left;display: none;}
-#header>.top_center>ul>li>ul:nth-of-type(2),#header>.top_center>ul>li>ul:nth-of-type(3){display: none;}
+#header>.top_center>ul>li>ul>li>ul{float: left; }
+#header>.top_center>ul>li>ul:nth-of-type(2),#header>.top_center>ul>li>ul:nth-of-type(3){}
 
 
 
@@ -40,42 +41,50 @@ a{text-decoration: none;}
 }
 
 /* content1 */
-.content1{width: 100%;height: 962px; position: relative; background: linear-gradient(#f4f7fb 40%, #fff 40%);}
-.content1>h2{font-size: 37px; font-weight: bold; position: absolute; top: 130px; left: 890px;}
+.content1{width: 100%;height: 962px; position: relative; 
+    background: linear-gradient(#f4f7fb 40%, #fff 40%);
+    }
+    .content1>.scroll{transform: translateY(100px); transition: all 1.0s ease 0.5s;opacity: 0; }
+.content1>.scroll.on{opacity: 1; transform: translateY(0);}
 
-.content1>div{width: 100%; height: 430px; position: absolute; top: 220px;}
+.content1>.scroll>h2{font-size: 37px; font-weight: bold; position: absolute; top: 130px; left: 890px;}
 
-.content1>div>section{width: 360px; height: 337px; }
+.content1>.scroll>div{width: 100%; height: 430px; position: absolute; top: 220px;}
 
-.content1>div>section:nth-of-type(1){ position: absolute; top: 20px; left: 350px;}
-.content1>div>section:nth-of-type(2){ position: absolute; top: 20px; left: 770px;}
-.content1>div>section:nth-of-type(3){ position: absolute; top: 20px; left: 1190px;}
+.content1>.scroll>div>section{width: 360px; height: 337px; }
 
-.content1>div>section>a>p img{width: 360px;height: 203px; }
+.content1>.scroll>div>section:nth-of-type(1){ position: absolute; top: 20px; left: 350px;}
+.content1>.scroll>div>section:nth-of-type(2){ position: absolute; top: 20px; left: 770px;}
+.content1>.scroll>div>section:nth-of-type(3){ position: absolute; top: 20px; left: 1190px;}
 
-.content1>div>section>a>div{padding: 20px 15px;}
-.content1>div>section>a>div>h3{font-size: 16px; color: #999;}
-.content1>div>section>a>div>h3 span{color: #38356d; font-weight: bold;}
-.content1>div>section:nth-of-type(1)>a>div>h3 span{color: #043285;}
-.content1>div>section>a>div>p{color: #000; font-size: 22px; font-weight: 700; margin: 10px 0;}
+.content1>.scroll>div>section>a>p img{width: 360px;height: 203px; }
 
-.content1>div>section:hover{background: #fff; box-shadow: 25px 25px 35px #d3d8e0; 
+.content1>.scroll>div>section>a>div{padding: 20px 15px;}
+.content1>.scroll>div>section>a>div>h3{font-size: 16px; color: #999;}
+.content1>.scroll>div>section>a>div>h3 span{color: #38356d; font-weight: bold;}
+.content1>.scroll>div>section:nth-of-type(1)>a>div>h3 span{color: #043285;}
+.content1>.scroll>div>section>a>div>p{color: #000; font-size: 22px; font-weight: 700; margin: 10px 0;}
+
+.content1>.scroll>div>section:hover{background: #fff; box-shadow: 25px 25px 35px #d3d8e0; 
                            border-bottom:3px solid #043285; transition: all 0.2s ease-in 0s;}
 
-.content1>.newsletter{width: 1200px; height: 180px;background: #f4f7fb; position: absolute; top: 653px; left: 350px;}
-.content1>.newsletter>p{padding: 40px 20px 20px 40px; width: 189px; height: 121px;}
-.content1>.newsletter>div{position: absolute;top: 50px; left: 250px;}
-.content1>.newsletter>div>h3{font-size: 27px; font-weight: bold;}
-.content1>.newsletter>div>p{font-size: 17px; padding-top: 10px; color: #666;}
-.content1>.newsletter>div>span{font-size: 16px; width: 160px; height: 45px; background: #fff; 
+.content1>.scroll>.newsletter{width: 1200px; height: 180px;background: #f4f7fb; position: absolute; top: 653px; left: 350px;}
+.content1>.scroll>.newsletter>p{padding: 40px 20px 20px 40px; width: 189px; height: 121px;}
+.content1>.scroll>.newsletter>div{position: absolute;top: 50px; left: 250px;}
+.content1>.scroll>.newsletter>div>h3{font-size: 27px; font-weight: bold;}
+.content1>.scroll>.newsletter>div>p{font-size: 17px; padding-top: 10px; color: #666;}
+.content1>.scroll>.newsletter>div>span{font-size: 16px; width: 160px; height: 45px; background: #fff; 
                                position: absolute; top: 35px; left: 460px; text-align: center; line-height: 45px;}
-.content1>.newsletter>div>span:nth-of-type(2){left: 630px;}
-.content1>.newsletter>div>span>a{color: #666;}
-.content1>.newsletter>div>span i{font-size: 13px;}
+.content1>.scroll>.newsletter>div>span:nth-of-type(2){left: 630px;}
+.content1>.scroll>.newsletter>div>span>a{color: #666;}
+.content1>.scroll>.newsletter>div>span i{font-size: 13px;}
 
 
 /* content2 */
 .content2{width: 100%; height: 290px; position: relative; overflow: hidden;}
+.content2>.scroll{transform: translateY(100px); transition: all 2.0s ease 0.5s;opacity: 0; }
+.content2>.scroll.on{opacity: 1; transform: translateY(0);}
+
 .content2>a>h2 img{width: 100%;}
 .content2>a>p:nth-of-type(1){position: absolute;top: 0; left: 990px;}
 .content2>a p:nth-of-type(2){font-size: 22px; color: #ffffffb3; position: absolute; top: 100px; left: 350px;
